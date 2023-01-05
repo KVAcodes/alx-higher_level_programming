@@ -2,4 +2,4 @@
 Kadiri Victor.
 
 # WELCOME TO MY PYTHON JOURNEY
-![](https://banner2.cleanpng.com/20180325/rce/kisspng-python-mysql-yellow-dog-updater-modified-django-d-fierce-python-cliparts-5ab7c9de8053a7.4167643715219942065256.jpg)
+![Python image]((https://camo.githubusercontent.com/9fd57290c645df1a178a7f1a864f787192aa6df0a2848983c322c63e307cf242/68747470733a2f2f72616a697670616e6469742e66696c65732e776f726470726573732e636f6d2f323031332f30322f707974686f6e2e706e67)
