@@ -1,11 +1,4 @@
 #0x00. Python - Hello, World
 
-### AUTHOR:
+### AUTHOR :open_book:
 Kadiri Victor.
-
-## TASKS
-### MANDATORY
-####[0 - run]()
-#####	Write a Shell script that runs a Python script.
-####[]()
-#####
