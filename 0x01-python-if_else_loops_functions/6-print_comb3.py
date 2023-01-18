@@ -10,6 +10,6 @@ for num_1 in range(0, 10):
                 print("{0}{1}".format(num_1, num_2), end="")
                 flag = -1
             else:
-                print(" ,{0}{1}".format(num_1, num_2), end="")
+                print(", {0}{1}".format(num_1, num_2), end="")
 
 print()
