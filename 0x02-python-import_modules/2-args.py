@@ -13,4 +13,4 @@ if __name__ == "__main__":
             if num == 0:
                 continue
             else:
-                print("{} : {}".format(num, item))
+                print("{}: {}".format(num, item))
