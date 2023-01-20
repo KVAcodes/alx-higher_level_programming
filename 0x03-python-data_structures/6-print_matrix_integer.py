@@ -5,10 +5,10 @@ def print_matrix_integer(matrix=[[]]):
     for row in matrix:
         for item in row:
             if flag == 0:
-                print(item, end="")
+                print("{:d}".format(item), end="")
                 flag = 1
             else:
-                print(" {}".format(item), end="")
+                print(" {:d}".format(item), end="")
         print()
         flag = 0
     return
