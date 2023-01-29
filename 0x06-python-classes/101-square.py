@@ -92,7 +92,7 @@ integers")
         """
         ret = ""
         if (self.size == 0):
-            ret += "\n"
+            ret += ""
             return ret
         for ver in range(self.position[1]):
             ret += "\n"
