@@ -1,0 +1,134 @@
+Test suite for 100-matrix_mul.py
+=================================
+
+first import matrix_mul function:
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+TESTS
+
+Test 1:
+=======
+>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[7, 10], [15, 22]]
+
+Test 2:
+=======
+>>> print(matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+[[13, 16]]
+
+Test 3:
+=======
+>>> try:
+...	matrix_mul("1, 2", [[3, 3], [4, 5]])
+... except Exception as e:
+...	print(e)
+m_a must be a list
+
+Test 4:
+=======
+>>> try:
+...	matrix_mul([[1, 2], [2, 6]], "3, 4")
+... except Exception as e:
+...	print(e)
+m_b must be a list
+
+
+Test 5:
+=======
+>>> try:
+...	matrix_mul([2, 4], [[3, 2], [5, 4]])
+... except Exception as e:
+...	print(e)
+m_a must be a list of lists
+
+Test 6:
+=======
+>>> try:
+...	matrix_mul([[3, 2], [5, 4]], [2, 4])
+... except Exception as e:
+...	print(e)
+m_b must be a list of lists
+
+
+Test 7:
+=======
+>>> try:
+...	matrix_mul([], [[3, 2], [5, 4]])
+... except Exception as e:
+...	print(e)
+m_a can't be empty
+
+Test 8:
+=======
+>>> try:
+...	matrix_mul([[3, 2], [5, 4]], [[]])
+... except Exception as e:
+...	print(e)
+m_b can't be empty
+
+
+Test 9:
+=======
+>>> try:
+...	matrix_mul([[3, 4], ["fish", 4]], [[3, 2], [5, 4]])
+... except Exception as e:
+...	print(e)
+m_a should contain only integers or floats
+
+Test 10:
+=======
+>>> try:
+...	matrix_mul([[3, 4], [2, 3]], [[3, 4], ["fish", 4]])
+... except Exception as e:
+...	print(e)
+m_b should contain only integers or floats
+
+
+Test 11:
+=======
+>>> try:
+...	matrix_mul([[1, 2],[1, 2, 3]], [[1, 2], [3, 4]])
+... except Exception as e:
+...	print(e)
+each row of m_a must be of the same size
+
+
+Test 12:
+=======
+>>> try:
+...	matrix_mul([[1, 2], [2, 3]], [[1, 2], [1, 2, 3]])
+... except Exception as e:
+...	print(e)
+each row of m_b must be of the same size
+
+Test 13:
+=======
+>>> try:
+...	matrix_mul([[1, 2], [2, 3]], [[1, 2], [1, 2, 3]])
+... except Exception as e:
+...	print(e)
+each row of m_b must be of the same size
+
+Test 14:
+========
+>>> try:
+... 	matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4]])
+... except Exception as e:
+...	print(e)
+m_a and m_b can't be multiplied
+
+Test 15:
+========
+>>> try:
+... 	matrix_mul([[1, 2, 3], [4, 5, 6]])
+... except Exception as e:
+...	print(e)
+matrix_mul() missing 1 required positional argument: 'm_b'
+
+Test 16:
+========
+>>> try:
+... 	matrix_mul()
+... except Exception as e:
+...	print(e)
+matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
