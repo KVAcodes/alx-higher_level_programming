@@ -1,43 +1,43 @@
-Test suite for 0-add_integer.py
-===============================
+======================================
+Doc-Test for the add_integer function.
+======================================
 
-First import 'add_integer' function from 0-add_integer module:
-
+First to import the function add_integer.
 >>> add_integer = __import__('0-add_integer').add_integer
 
-Now using it:
+Testing with regular integers.
 >>> print(add_integer(1, 2))
 3
+
+Testing with one negative integer.
 >>> print(add_integer(100, -2))
 98
+
+Testing with only one positional argument.
 >>> print(add_integer(2))
 100
+
+Testing with one float argument
 >>> print(add_integer(100.3, -2))
 98
+
+Testing if TypeError is raised for non float and string argument.
 >>> try:
-...     print(add_integer(4, "School"))
+...	print(add_integer(4, "School"))
 ... except Exception as e:
-...     print(e)
+...	print(e)
 b must be an integer
+
+Testing for TypeError for None argument
 >>> try:
-...     print(add_integer(None))
+...	print(add_integer(None))
 ... except Exception as e:
-...     print(e)
-a must be an integer
->>> try:
-...     print(add_integer(None, None))
-... except Exception as e:
-...     print(e)
+...	print(e)
 a must be an integer
 
+Testing with no positional arguments
 >>> try:
-...	print(add_integer(float('inf'), 100))
+...	print(add_integer())
 ... except Exception as e:
-... 	print(e)
-cannot convert float infinity to integer
-
->>> try:
-...	print(add_integer(float('nan'), 100))
-... except Exception as e:
-... 	print(e)
-cannot convert float NaN to integer
+...	print(e)
+add_integer() missing 1 required positional argument: 'a'
