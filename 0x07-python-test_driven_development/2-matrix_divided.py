@@ -21,6 +21,8 @@ def matrix_divided(matrix, div):
     """
     if div == 0:
         raise ZeroDivisionError("division by zero")
+    if type(div) not in [int, float]:
+        raise TypeError("div must be a number")
     if len(matrix) == 0:
         return []
     length = len(matrix[0])
