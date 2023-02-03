@@ -47,7 +47,7 @@ Using function without arguments:
 >>> try:
 ... 	text_indentation()
 ... except Exception as e:
-...	print e
+...	print(e)
 text_indentation() missing 1 required positional argument: 'text'
 
 Using function with non-string argument
@@ -56,3 +56,8 @@ Using function with non-string argument
 ... except Exception as e:
 ...	print(e)
 text must be a string
+
+>>> text_indentation("Holberton.School")
+Holberton.
+<BLANKLINE>
+School
