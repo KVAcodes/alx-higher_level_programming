@@ -64,6 +64,8 @@ class Rectangle:
         """Returns the string representation of the rectangle.
         """
         string = ""
+        if self.height == 0 or self.width == 0:
+            return string
         for y in range(self.height):
             for x in range(self.width):
                 string += '#'
