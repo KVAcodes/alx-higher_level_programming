@@ -71,3 +71,9 @@ class Rectangle:
                 string += '#'
             string += '\n' if y != (self.height - 1) else ""
         return string
+
+    def __repr__(self):
+        """Returns a string representatio of the rectangle to
+        be able to recreate a new instance by using eval().
+        """
+        return f"Rectangle({self.width}, {self.height})"
