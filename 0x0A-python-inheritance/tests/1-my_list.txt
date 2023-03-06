@@ -21,3 +21,9 @@ instantiating class
 
 >>> print(my_list)
 [1, 4, 2, 3, 5]
+
+>>> issubclass(MyList, list)
+True
+
+>>> isinstance(my_list, list)
+True
