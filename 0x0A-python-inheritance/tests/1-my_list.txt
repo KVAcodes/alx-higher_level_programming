@@ -22,8 +22,16 @@ instantiating class
 >>> print(my_list)
 [1, 4, 2, 3, 5]
 
+>>> my_list.append(-1)
+>>> my_list.print_sorted()
+[-1, 1, 2, 3, 4, 5]
+
 >>> issubclass(MyList, list)
 True
 
 >>> isinstance(my_list, list)
 True
+
+>>> lst = MyList()
+>>> lst.print_sorted()
+[]
