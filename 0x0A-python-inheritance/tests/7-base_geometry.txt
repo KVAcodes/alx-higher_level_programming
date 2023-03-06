@@ -1,0 +1,57 @@
+=========================
+Test for 7-base_geometry.
+=========================
+
+IMPORTING CLASS
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+INSTANTIATION
+>>> bg = BaseGeometry()
+
+CHECKING IF ANY ERROR IS RAISED WITH INT VALUE INPUT
+#!/usr/bin/python3
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+
+IF VALUE IS NOT INT
+>>> try:
+...	bg.integer_validator("name", "John")
+... except Exception as e:
+...	print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+		
+IF VALUE IS 0
+>>> try:
+... 	bg.integer_validator("age", 0)
+... except Exception as e:
+...	print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] age must be greater than 0
+
+IF VALUE < 0
+>>> try:
+...	bg.integer_validator("distance", -4)
+... except Exception as e:
+...	print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] distance must be greater than 0
+
+CHECK INSTANCE:
+>>> isinstance(bg, BaseGeometry)
+True
+
+CHECK AREA():
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+CHECK NO ARG INTEGER_VALIDATOR:
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+NO VALUE ARG									 
+>>> bg.integer_validator("age")
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: integer_validator() missing 1 required positional argument: 'value'
