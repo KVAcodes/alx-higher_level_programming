@@ -6,7 +6,7 @@
 class Student:
     """The Student class.
     """
-    def __init__(self, first_namme, last_name, age):
+    def __init__(self, first_name, last_name, age):
         """Constructor of the Student instances.
         """
         self.first_name = first_name
