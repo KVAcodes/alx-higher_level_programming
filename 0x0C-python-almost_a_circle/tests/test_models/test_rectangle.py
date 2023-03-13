@@ -9,6 +9,7 @@ from models import Rectangle
 from io import StringIO
 from unittest.mock import patch
 
+
 class TestRectangle(unittest.TestCase):
     """Tests the Rectangle class.
     """
