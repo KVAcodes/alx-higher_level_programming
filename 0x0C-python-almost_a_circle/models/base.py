@@ -36,4 +36,5 @@ class Base:
         """
         with open(f"{cls.__name__}.json", "w") as j_file:
             j_file.write(cls.to_json_string([obj.to_dictionary() for obj in
-                         list_objs]))
+                                             list_objs] if list_objs is not
+                                            None else None))
