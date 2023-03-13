@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module contains the defintion of Rectangle class.
+"""This module contains the Rectangle class definition.
 """
 
 
@@ -7,24 +7,18 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """The Rectangle object sub class of Base.
+    """This is the Rectangle class.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initializer/Constructor for the Rectangle class instances.
+        """Initializer/Constructor of the Rectangle object instances.
 
         Args:
-            width (int): width of the rectangle object.
-            height (int): height of the rectangle object.
-            x (int): position on the x-axis.
-            y (int): position on the y-axis.
-            id (int): id.
-
-        Returns:
-            None
-
-        Raises:
-            None
+            width (int): width of rectangle.
+            height (int): height of rectangle.
+            x (int): position of the rectangle on the X axis.
+            y (int): position of the rectangle on the Y axis.
+            id (None): id of the rectangle
         """
         super().__init__(id)
         self.width = width
@@ -34,7 +28,8 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Gets/sets the width of the rectangle."""
+        """Getter and setter for the width attribute.
+        """
         return self.__width
 
     @width.setter
@@ -47,7 +42,8 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Gets/sets the height of the rectangle."""
+        """Getter and setter for the height attribute.
+        """
         return self.__height
 
     @height.setter
@@ -60,7 +56,8 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Gets/sets the x position of the rectangle."""
+        """Getter and setter for the x attribute.
+        """
         return self.__x
 
     @x.setter
@@ -73,7 +70,8 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Gets/sets the y position of the rectangle."""
+        """Getter and setter for the x attribute.
+        """
         return self.__y
 
     @y.setter
