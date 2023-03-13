@@ -48,3 +48,9 @@ class TestRectangle(unittest.TestCase):
             Rectangle(10, 2, -3, 1)
         with self.assertRaises(TypeError):
             Rectangle("10", 2)
+
+    def test_area(self):
+        """tests the area method of the Rectangle class.
+        """
+        self.assertEqual(self.rec1.area(), 20)
+        self.assertEqual(Rectangle(5, 5).area(), 25)
