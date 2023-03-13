@@ -106,3 +106,35 @@ class Rectangle(Base):
             f"[Rectangle] ({self.id}) {self.__x}/{self.__y} -"
             f" {self.__width}/{self.__height}"
                )
+
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute.
+
+        Args:
+            args (list of int): updated arguments
+        Returns:
+            None
+        """
+        if len(args):
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except IndexError:
+                return
+            else:
+                return
+
+        for key, value in kwargs.items():
+            if key == "id":
+                self.id = value
+            elif key == "width":
+                self.width = value
+            elif key == "height":
+                self.height = value
+            elif key == 'x':
+                self.x = value
+            elif key == 'y':
+                self.y = value
