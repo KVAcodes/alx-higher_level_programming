@@ -6,7 +6,8 @@
 import unittest
 from models import Base
 from models import Rectangle
-
+from io import StringIO
+from unittest.mock import patch
 
 class TestRectangle(unittest.TestCase):
     """Tests the Rectangle class.
@@ -16,6 +17,8 @@ class TestRectangle(unittest.TestCase):
         cls.rec1 = Rectangle(10, 2)
         cls.rec2 = Rectangle(2, 10)
         cls.rec3 = Rectangle(10, 2, 0, 0, 12)
+        cls.rec4 = Rectangle(4, 6)
+        cls.rec5 = Rectangle(2, 3, 2, 2)
 
     def test_inheritance(self):
         """tests if the rectangle instance inherits from the Base class.
@@ -54,3 +57,14 @@ class TestRectangle(unittest.TestCase):
         """
         self.assertEqual(self.rec1.area(), 20)
         self.assertEqual(Rectangle(5, 5).area(), 25)
+
+    def test_display(self):
+        """test the display method of the rectangle class.
+        """
+        with patch('sys.stdout', StringIO()) as fake_out:
+            self.rec4.display()
+            self.assertEqual(fake_out.getvalue(), "####\n####\n####\n####\n"
+                             "####\n####\n")
+        with patch('sys.stdout', StringIO()) as fake_out:
+            self.rec5.display()
+            self.assertEqual(fake_out.getvalue(), "\n\n  ##\n  ##\n  ##\n")
