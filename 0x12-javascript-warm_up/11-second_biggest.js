@@ -11,6 +11,10 @@ while (count < argv.length) {
   if (argv[count] > biggest) {
     secondBiggest = biggest;
     biggest = parseInt(argv[count]);
+  } else {
+    if (argv[count] > secondBiggest) {
+      secondBiggest = argv[count];
+    }
   }
   count++;
 }
