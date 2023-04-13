@@ -15,4 +15,4 @@ while (count < argv.length) {
   count++;
 }
 
-console.log(secondBiggest);
+console.log(parseInt(secondBiggest));
