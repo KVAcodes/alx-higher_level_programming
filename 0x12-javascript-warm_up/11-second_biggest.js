@@ -4,15 +4,15 @@ const process = require('process');
 const argv = process.argv;
 
 let count = 3;
-let biggest = argv[2];
+let biggest = parseInt(argv[2]);
 let secondBiggest = 0;
 
 while (count < argv.length) {
   if (argv[count] > biggest) {
     secondBiggest = biggest;
-    biggest = argv[count];
+    biggest = parseInt(argv[count]);
   }
   count++;
 }
 
-console.log(parseInt(secondBiggest));
+console.log(secondBiggest);
