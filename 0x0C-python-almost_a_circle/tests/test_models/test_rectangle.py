@@ -87,6 +87,7 @@ class TestRectangle(unittest.TestCase):
             print(self.rec6)
             self.assertEqual(fake_out.getvalue(), "[Rectangle] (89) 10/10 - "
                              "10/10\n")
+
         with patch('sys.stdout', StringIO()) as fake_out:
             self.rec6.update(89, 2, 3, 4, 5)
             print(self.rec6)

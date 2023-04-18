@@ -1,62 +1,75 @@
 #!/usr/bin/python3
-"""
-nqueens backtracking program to print the coordinates of n queens
-on an nxn grid such that they are all in non-attacking positions
+"""This a program That solves the N queens problem.
 """
 
 
-from sys import argv
+import sys
 
-if __name__ == "__main__":
-    a = []
-    if len(argv) != 2:
-        print("Usage: nqueens N")
-        exit(1)
-    if argv[1].isdigit() is False:
-        print("N must be a number")
-        exit(1)
-    n = int(argv[1])
-    if n < 4:
-        print("N must be at least 4")
-        exit(1)
+def board_init(n):
+    """Creates a n by n board as a 2-D list and
+    initializes the whole board with "None" and
+    Returns the board for further analysis.
+    """
+    return [[None for x in range(n)] for y in range(n)]
 
-    # initialize the answer list
-    for i in range(n):
-        a.append([i, None])
-
-    def already_exists(y):
-        """check that a queen does not already exist in that y value"""
-        for x in range(n):
-            if y == a[x][1]:
-                return True
-        return False
-
-    def reject(x, y):
-        """determines whether or not to reject the solution"""
-        if (already_exists(y)):
+def isValid(board, row, column, n):
+    """Checks if the square is being attacked by any queens on the
+    board as at the time in question.
+    """
+    # row check
+    for x in board[row]:
+        if not x is None:
             return False
-        i = 0
-        while(i < x):
-            if abs(a[i][1] - y) == abs(i - x):
-                return False
-            i += 1
-        return True
+    # col check
+    for y in [lst[column] for lst in board]:
+        if not y is None:
+            return False
+    # Diagonals check
+        # For Negative slope diag
+    tmp_row = row
+    tmp_col = column
 
-    def clear_a(x):
-        """clears the answers from the point of failure on"""
-        for i in range(x, n):
-            a[i][1] = None
+    while tmp_row >= 0 and tmp_col >= 0:
+        tmp_row -= 1
+        tmp_col -= 1
+        if board[tmp_row][tmp_col] is True:
+            return False
+        else:
+            continue
 
-    def nqueens(x):
-        """recursive backtracking function to find the solution"""
-        for y in range(n):
-            clear_a(x)
-            if reject(x, y):
-                a[x][1] = y
-                if (x == n - 1):  # accepts the solution
-                    print(a)
-                else:
-                    nqueens(x + 1)  # moves on to next x value to continue
+    tmp_row = row
+    tmp_col = column
 
-    # start the recursive process at x = 0
-    nqueens(0)
+    while tmp_row != n - 1 and tmp_col != n - 1:
+        tmp_row += 1
+        tmp_col += 1
+        if board[tmp_row][tmp_col] is True:
+            return False
+        else:
+            continue
+
+    tmp_row = row
+    tmp_col = column
+
+    while tmp_row >= 0 and tmp_col != n - 1:
+        tmp_row -= 1
+        tmp_col += 1
+        if board[tmp_row][tmp_col] is True:
+            return False
+        else:
+            continue
+
+    tmp_row = row
+    tmp_col = column
+
+    while tmp_row != n -1 and tmp_col >= 0:
+        tmp_row += 1
+        tmp_col -= 1
+        if board[tmp_row][tmp_col] is True:
+            return False
+        else:
+            continue
+    return True
+
+def trackback(board, row_index, n):
+    """
