@@ -1,18 +1,13 @@
 #!/usr/bin/node
 
 const process = require('process');
-const argv = process.argv;
+const value = parseInt(process.argv[2]);
 
-const num = parseInt(argv[2]);
-
-function fact (num) {
-  if (isNaN(num)) {
+function fact (val) {
+  if (isNaN(val) || val == 1) {
     return (1);
   }
-  if (num === 2) {
-    return (num);
-  }
-  return (num * fact(num - 1));
+  return (val * fact(val - 1));
 }
 
-console.log(fact(num));
+console.log(fact(value));
