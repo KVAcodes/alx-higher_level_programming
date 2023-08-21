@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""This script lists all the states from the database hbtn_0e_0_usa.
-with a name starting with N (upper N).
+"""a script that lists all cities from the database hbtn_0e_4_usa.
 """
 
 import sys
