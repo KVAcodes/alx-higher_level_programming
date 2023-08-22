@@ -17,4 +17,4 @@ if __name__ == "__main__":
     if first_obj:
         print(first_obj.id, ": ", first_obj.name, sep="")
     else:
-        print()
+        print("Nothing")
