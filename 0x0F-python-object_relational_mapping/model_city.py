@@ -7,7 +7,6 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base, State
 
 
-
 class City(Base):
     """This is state class which defines the database table.
     """
