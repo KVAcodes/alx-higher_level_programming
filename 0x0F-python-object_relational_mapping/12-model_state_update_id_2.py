@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" a script that adds the State object “Louisiana” to the
+"""a script that changes the name of a State object from the
 database hbtn_0e_6_usa.
 """
 
@@ -14,7 +14,6 @@ if __name__ == "__main__":
     engine.connect()
     Session = sessionmaker(bind=engine)
     session = Session()
-    session.add(State(name="Louisiana"))
+    state_id_2 = session.query(State).filter_by(id='2').first()
+    state_id_2.name = "New Mexico"
     session.commit()
-    qry = session.query(State).filter_by(name='Louisiana').first()
-    print(qry.id)
