@@ -11,9 +11,9 @@ if __name__ == "__main__":
         content_byte = response.read()
         formatted_output = (
             "Body response:\n"
-            "    - type: {}\n"
-            "    - content: {}\n"
-            "    - utf8 content: {}"
+            "\t- type: {}\n"
+            "\t- content: {}\n"
+            "\t- utf8 content: {}"
         ).format(type(content_byte), content_byte,
                  content_byte.decode(encoding="utf-8"))
         print(formatted_output)
