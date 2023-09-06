@@ -7,7 +7,7 @@ import sys
 
 if __name__ == "__main__":
     post_data = {
-        'q': sys.argv[1] if sys.argv[1] else ""
+        'q': sys.argv[1] if len(sys.argv) > 1 else ""
     }
     with (
         requests.post('http://0.0.0.0:5000/search_user', post_data)
@@ -20,5 +20,4 @@ if __name__ == "__main__":
             if not response_json:
                 print("No result")
             else:
-                for id, name in response_json.items():
-                    print(f"[{id}] {name}")
+                print(f"[{response_json['id']}] {response_json['name']}")
