@@ -7,17 +7,12 @@ import requests
 
 
 if __name__ == '__main__':
-    headers = {
-        'Accept': 'application/vnd.github+json',
-        'Authorization': 'KVAcodes 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',
-        'X-GitHub-Api-Version': '2022-11-28'
-    }
     base_url = "https://api.github.com/repos/"
     owner = f"{sys.argv[1]}/"
     repo = f"{sys.argv[2]}/"
     url = base_url + owner + repo + "commits"
     with (
-        requests.get(url, headers=headers)
+        requests.get(url)
     ) as response:
         response_json = response.json()
         i = 0
