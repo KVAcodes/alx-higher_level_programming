@@ -20,7 +20,9 @@ if __name__ == '__main__':
         requests.get(url, headers=headers)
     ) as response:
         response_json = response.json()
-        for i in range(10):
+        i = 0
+        while i < 10 and i < len(response_json):
             sha = response_json[i]['sha']
             author = response_json[i]['commit']['author']['name']
             print(f"{sha}: {author}")
+            i += 1
