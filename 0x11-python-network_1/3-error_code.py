@@ -15,6 +15,6 @@ if __name__ == "__main__":
             urllib.request.urlopen(sys.argv[1])
         ) as response:
             content_byte = response.read()
-            print(formatted_output)
+            print(content_byte.decode("utf-8"))
     except HTTPError as e:
         print(f"Error code: {e.code}")
