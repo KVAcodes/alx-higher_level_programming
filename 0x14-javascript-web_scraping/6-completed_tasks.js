@@ -16,7 +16,11 @@ request.get(url, (error, response, body) => {
         completedTasks[task.userId.toString()]++;
       }
     } else {
-      completedTasks[task.userId.toString()] = 1;
+      if (task.completed) {
+        completedTasks[task.userId.toString()] = 1;
+      } else {
+        completedTasks[task.userId.toString()] = 0;
+      }
     }
   }
   console.log(completedTasks);
