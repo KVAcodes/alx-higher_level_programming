@@ -13,7 +13,7 @@ request.get(url, (error, response, body) => {
 
   let count = 0;
   movies.forEach((movie) => {
-    if (movie.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
+    if (movie.characters.some((str) => str.endsWith('18/'))) {
       count++;
     }
   });
