@@ -5,7 +5,7 @@ const url = process.argv[2];
 
 request.get(url, (error, response, body) => {
   if (error) {
-    // pass
+    console.log(error);
   }
   const tasks = JSON.parse(body);
   const completedTasks = {};
@@ -16,7 +16,7 @@ request.get(url, (error, response, body) => {
         completedTasks[task.userId.toString()]++;
       }
     } else {
-      completedTasks[task.userId.toString()] = 0;
+      completedTasks[task.userId.toString()] = 1;
     }
   }
   console.log(completedTasks);
