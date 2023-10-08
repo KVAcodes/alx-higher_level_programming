@@ -1,8 +1,16 @@
-$('document').ready(function () {
-  const url = 'https://www.fourtonfish.com/hellosalut/?';
-  $('INPUT#btn_translate').click(function () {
-    $.get(url + $.param({ lang: $('INPUT#language_code').val() }), function (data) {
-      $('DIV#hello').html(data.hello);
+$(function() {
+  api_url = 'https://hellosalut.stefanbohacek.dev/';
+  $('input#btn_translate').click(function() {
+    $.ajax({
+      url: api_url + '?' + 'lang=' + $('input#language_code').val(),
+      method: "GET",
+      dataType: "json",
+      success: function(response) {
+        $('div#hello').html(response.hello);
+      },
+      error: function(xhr, status, error) {
+        console.error(status, error);
+      }
     });
   });
 });

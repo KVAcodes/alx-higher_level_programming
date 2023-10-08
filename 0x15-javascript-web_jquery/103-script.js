@@ -1,17 +1,31 @@
-$('document').ready(function () {
-  $('INPUT#btn_translate').click(translate);
-  $('INPUT#language_code').focus(function () {
-    $(this).keydown(function (e) {
-      if (e.keyCode === 13) {
-        translate();
+$(function() {
+  api_url = 'https://hellosalut.stefanbohacek.dev/';
+  $('input#btn_translate').click(function() {
+    $.ajax({
+      url: api_url + '?' + 'lang=' + $('input#language_code').val(),
+      method: "GET",
+      dataType: "json",
+      success: function(response) {
+        $('div#hello').html(response.hello);
+      },
+      error: function(xhr, status, error) {
+        console.error(status, error);
       }
     });
   });
-});
-
-function translate () {
-  const url = 'https://www.fourtonfish.com/hellosalut/?';
-  $.get(url + $.param({ lang: $('INPUT#language_code').val() }), function (data) {
-    $('DIV#hello').html(data.hello);
+  $('input#language_code').on('keyup', function(event) {
+    if (event.keyCode === 13) {
+      $.ajax({
+        url: api_url + '?' + 'lang=' + $('input#language_code').val(),
+        method: "GET",
+        dataType: "json",
+        success: function(response) {
+          $('div#hello').html(response.hello);
+        },
+        error: function(xhr, status, error) {
+          console.error(status, error);
+        }
+      });
+    }
   });
-}
+});
